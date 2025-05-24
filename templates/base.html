@@ -1,0 +1,66 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>{{title}}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="{% static 'js/main.js' %}"></script>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/btn.css' %}">
+        <link rel="stylesheet" href="{% static 'css/radio.css' %}">
+        <link rel="stylesheet" href="{% static 'css/grid-gallery.min.css' %}">
+    </head>
+    <body class="overflow-x-hidden overflow-y-auto">
+    <div id="loading">
+        <img src="{% static 'images/SEKIRECORDS1.png' %}" alt="ロゴ画像">
+    </div>
+    <div id="content">
+        <div id="message">
+            <div class="message-back bg-light w-100 h-100 d-flex justify-content-center align-items-center opacity-75">
+            </div>
+            <img src="{% static 'images/greetings.png' %}" class="message-back d-flex justify-content-center align-items-center w-100 mt-5">
+        </div>
+        <!--#region header  -->
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-offwhite p-4 text-light">
+                <a class="navbar-brand fs-3 fw-bold">メニュー</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'appWedding:home' %}">ホーム</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'appWedding:favorite' %}">お気に入り</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'appWedding:access' %}">アクセス</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'appWedding:gallery' %}">ギャラリー</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'appWedding:ticket' %}">チケット</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'appWedding:profile' %}">プロフィール</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-white bg-beige d-flex px-4 py-2">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <img src="{% static 'images/SEKIRECORDS1.png' %}" class="h-50 flex-grow">
+        </nav>
+        <!--#endregion  -->
+        <div class="bg01 h-100 pb-2">
+        {% block content %}
+        {% endblock content %}
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django
+db.sqlite3
+*.log
+*.png
+*.PNG
+*.jpeg
+*.jpg
+*.JPG
+*.psd
+*.svg
+
+# Virtualenv
+venv/
+.env
+
+# OSファイル
+.DS_Store
+Thumbs.db

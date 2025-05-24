@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="text-center party-info pt-4">
+        <span>Profile</span>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-column text-center">
+        <img src="{% static 'images/teppei.png' %}" class="profile-img w-50 bg-light mt-3"></img>
+        <span>Groom</span>
+        <h3>碩 鉄平</h3>
+        <p>この度晴れて実咲さんと<br>
+        結婚することとなりました<br><br>
+        今後とも新郎新婦共々<br>
+        よろしくお願いします</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-column text-center">
+        <img src="{% static 'images/misaki.png' %}" class="profile-img w-50 mt-3">
+        <span>Bride</span>
+        <h3>佐藤 実咲</h3>
+        <p>鉄平さんと出会ってこれまで<br>
+        たくさんの人に支えられながら<br>
+        結婚まで進むことができました<br><br>
+        本当にありがとうございます。</p>
+    </div>
+{% endblock content %}

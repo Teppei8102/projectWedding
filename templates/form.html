@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        <form method="POST" id="form">
+        {% csrf_token %}
+        <div class="pt-3">
+            <h4>・ご出欠</h4>
+            <div class="inline-radio radio-opt">
+                <div class="radio-opt"><input type="radio" name="attendance" value="True" checked><label>ご出席</label></div>
+                <div class="radio-opt"><input type="radio" name="attendance" value="False"><label>ご欠席</label></div>
+            </div>
+        </div>
+        <div class="entry-form">
+            <!--#region お名前-->
+            <div class="pt-3">
+                <h4>・お名前</h4>
+                <div class="d-flex">
+                    <input name="nameFamily" type="lastname" class="form-control" id="FormControlInputLastName" placeholder="鈴木">
+                    <input name="nameFirst" type="firstname" class="form-control" id="FormControlInputFirstName" placeholder="太郎">
+                </div>
+            </div>
+            <div class="error">
+                {% for error in nameFamily %}
+                    ※名字：{{error}}
+                {% endfor %}
+            </div>
+            <div class="error">
+                {% for error in nameFirst %}
+                    ※名前：{{error}}
+                {% endfor %}
+            </div>
+            <!--#endregion-->
+            <!--#region お名前(ふりがな)-->
+            <div class="pt-3">
+                <h4>・お名前(ふりがな)</h4>
+                <div class="d-flex">
+                    <input name="nameHFamily" type="lastname-fu" class="form-control" id="FormControlInputLastNameFu" placeholder="すずき">
+                    <input name="nameHFirst" type="firstname-fu" class="form-control" id="FormControlInputFirstNameFu" placeholder="たろう">
+                </div>
+            </div>
+            <div class="error">
+                {% for error in nameFamily %}
+                    ※名字(ふりがな)：{{error}}
+                {% endfor %}
+            </div>
+            <div class="error">
+                {% for error in nameFirst %}
+                    ※名前(ふりがな)：{{error}}
+                {% endfor %}
+            </div>
+            <!--#endregion-->
+            <!--#region ご連名-->
+            {% comment %} <div class="pt-3">
+                <h4>・ご連名</h4>
+                <div class="d-flex">
+                    <input type="lastname" class="form-control" id="FormControlInputLastName" placeholder="鈴木">
+                    <input type="firstname" class="form-control" id="FormControlInputFirstName" placeholder="太郎">
+                </div>
+                <div class="d-flex">
+                    <input type="lastname-fu" class="form-control" id="FormControlInputLastNameFu" placeholder="すずき">
+                    <input type="firstname-fu" class="form-control" id="FormControlInputFirstNameFu" placeholder="たろう">
+                </div>
+            </div> {% endcomment %}
+            <!--#endregion-->
+            <!--#region 電話番号-->
+            <div class="pt-3">
+                <h4>・電話番号</h4>
+                <div class="d-flex">
+                    <input name="telNumber" type="tell" class="form-control" id="FormControlInputTell" placeholder="08012345678">
+                </div>
+                <div class="error">
+                    {% for error in telNumber %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+            </div>
+            <!--#endregion-->
+            <!--#region メールアドレス-->
+            <div class="pt-3">
+                <h4>・メールアドレス</h4>
+                <div class="d-flex">
+                    <input name="email" type="email" class="form-control" id="FormControlInputMail" placeholder="name@example.com">
+                </div>
+                <div class="error">
+                    {% for error in email %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+            </div>
+            <!--#endregion-->
+            <!--#region ご住所-->
+            <div class="pt-3">
+                <h4>・ご住所</h4>
+                <div class="d-flex">
+                    <div class="w-50">
+                        <p class="d-inline">-郵便番号</p>
+                        <div class="d-flex">
+                            {% comment %} <h5 class="align-middle ml-2 mt-3">〒</h5> {% endcomment %}
+                            <input name="postalCode" type="post" class="form-control w-75" id="FormControlInputPost" placeholder="7008570">
+                        </div>
+                    </div>
+                    <div class="w-50">
+                        <p class="d-inline">-都道府県</p>
+                        <select name="prefecture" class="form-control w-75">
+                            {% for prefecture in prefectures %}
+                            <option value="{{ prefecture }}">{{ prefecture }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="error">
+                    {% for error in postalCode %}
+                        ※郵便番号：{{error}}
+                    {% endfor %}
+                </div>
+                <div class="error">
+                    {% for error in prefecture %}
+                        ※都道府県：{{error}}
+                    {% endfor %}
+                </div>
+                <p>-市区町村</p>
+                <div class="d-flex">
+                        <input name="city" type="address1" class="form-control" id="FormControlInputAddress1" placeholder="岡山市北区内山下">
+                </div>
+                <div class="error">
+                    {% for error in city %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+                <p>-番地</p>
+                <div class="d-flex">
+                    <input name="streetAddress" type="address4" class="form-control" id="FormControlInputAddress2" placeholder="2丁目4番6号">
+                </div>
+                <div class="error">
+                    {% for error in streetAddress %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+                <p>-建物名・号室</p>
+                    <div class="d-flex">
+                        <input name="building" type="address3" class="form-control" id="FormControlInputAddress2" placeholder="A202号室">
+                </div>
+                <div class="error">
+                    {% for error in building %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+            </div>
+            <!--#endregion-->
+            <div class="pt-3">
+                <h4>・アレルギー等</h4>
+                <div class="d-flex">
+                    <textarea name="allergy" class="form-control" id="FormControlTextareaAllergy" rows="3"></textarea>
+                </div>
+                <div class="error">
+                    {% for error in allergy %}
+                        ※{{error}}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="pt-3">
+            <h4>・送迎バスのご利用有無</h4>
+            <div class="inline-radio radio-opt">
+                <div class="radio-opt"><input type="radio" name="bus" value="True"><label>利用する</label></div>
+                <div class="radio-opt"><input type="radio" name="bus" value="False" checked><label>利用しない</label></div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center m-4">
+            <a id="post" class="btn_03" ><span>回答を送信する</span></a>
+        </div>
+        <script>
+            const form = document.querySelector('#form');
+            const post = document.querySelector('#post');
+            post.addEventListener('click', function() {
+            form.submit();
+            });
+            </script>
+        </form>
+    </div>
+{% endblock content %}

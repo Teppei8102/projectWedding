@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="h-100 pt-3">
+            {% for i in artist %}
+            <div class="favorite text-center mb-3">
+                <img src="{{i.imageURL}}" class="w-100">
+                <img src="{{i.iconURL}}" class="w-75 mt-1">
+                <div class="d-flex justify-content-center align-items-center mx-2 favorite-link">
+                    {% if i.twitterURL %}<a href="{{i.twitterURL}}" class="d-block"><img src="{% static 'images/twitter.png' %}"></a>{% endif %}
+                    {% if i.youtubeURL %}<a href="{{i.youtubeURL}}" class="d-block"><img src="{% static 'images/youtube.png' %}"></a>{% endif %}
+                    {% if i.applemusicURL %}<a href="{{i.applemusicURL}}" class="d-block"><img src="{% static 'images/AppleMusic.svg' %}"></a>{% endif %}
+                    {% if i.spotifyURL %}<a href="{{i.spotifyURL}}" class="d-block"><img src="{% static 'images/Spotify.png' %}"></a>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
