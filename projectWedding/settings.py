@@ -5,9 +5,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-nr7=-hl=2$v_m*d6fm)a*k*ra94cabaer*u_r5_ad&42(blh=3"
 
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['133.130.98.148','sekirecord.jp']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -78,7 +80,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIR = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static/')
 ]
 
 MEDIA_URL = '/media/'
