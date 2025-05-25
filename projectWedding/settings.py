@@ -66,7 +66,7 @@ WSGI_APPLICATION = "projectWedding.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projectWedding_db',
+        'NAME': 'projectwedding_db',
         'USER': 'django_user',
         'PASSWORD': 'montajiZ001!',
         'HOST': 'localhost',
