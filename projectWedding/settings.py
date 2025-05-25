@@ -1,7 +1,9 @@
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = "/var/www/projectWedding"
 
 SECRET_KEY = "django-insecure-nr7=-hl=2$v_m*d6fm)a*k*ra94cabaer*u_r5_ad&42(blh=3"
 
@@ -54,10 +56,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "projectWedding.wsgi.application"
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'projectWeddingdb',
+        'USER': 'django',
+        'PASSWORD': 'montajiZ001!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
