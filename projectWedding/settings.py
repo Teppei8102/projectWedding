@@ -11,7 +11,7 @@ SECRET_KEY = "django-insecure-nr7=-hl=2$v_m*d6fm)a*k*ra94cabaer*u_r5_ad&42(blh=3
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['133.130.98.148','sekirecord.jp']
+ALLOWED_HOSTS = ['133.130.98.148','sekirecords.jp']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
