@@ -3,7 +3,7 @@ import os
 
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
-BASE_DIR = "/var/www/projectWedding"
+BASE_DIR = Path("/var/www/projectWedding")
 
 SECRET_KEY = "django-insecure-nr7=-hl=2$v_m*d6fm)a*k*ra94cabaer*u_r5_ad&42(blh=3"
 
@@ -66,8 +66,8 @@ WSGI_APPLICATION = "projectWedding.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projectWeddingdb',
-        'USER': 'django',
+        'NAME': 'projectWedding_db',
+        'USER': 'django_user',
         'PASSWORD': 'montajiZ001!',
         'HOST': 'localhost',
         'PORT': '5432',
