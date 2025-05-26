@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="h-100 pt-3">
+            <div class="ticket">
+                <a href="{% url 'appWedding:ticket_entry' %}">
+                    <img class="w-100" src="{% static 'images/ticket.JPG' %}">
+                    <div class="ticket-info">
+                        <div>
+                            <p>2025年</p>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <h1>9/20</h1><p>(<span>土<span>)</p><h2>11:30 開場 / 12:25 開演</h2>
+                        </div>
+                            <h2>碩 鉄平 / 碩 実咲 GUEST:あなた</h2>
+                        <div>
+                            <p>WHITE DRAMA</p>
+                        </div>
+                        <div>
+                            <p>整理番号 : 000番</p>
+                        </div>
+                    </div>
+                    <div class="ticket-link d-flex align-items-center">
+                        <p>チケットはこちら</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

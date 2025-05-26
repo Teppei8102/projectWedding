@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <div class="h-100">
+            <div class="text-center pt-4 party-info">
+                <span>Access</span>
+            </div>
+            <div class="text-center m-4 party-info square-line py-4 d-flex flex-column justify-content-center align-items-center">
+                <h3>WHITEDRAMA</h3>
+                <p class="m-0">岡山県岡山市北区青江2-13-1</p>
+                <p class="m-0">086-238-3442</p>
+            </div>
+            <div class="map-link w-100 position-relative">
+                <iframe class="w-100 h-100 top-0 start-0 position-absolute" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1685.480869038772!2d133.92102562668305!3d34.63174756408323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35540729d79f6873%3A0xf8ca29daaedfe35!2z44Ob44Ov44Kk44OI44OJ44Op44Oe!5e0!3m2!1sja!2sjp!4v1742998045770!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <img src="{% static 'images/access.JPG' %}" class="w-100">
+        </div>
+{% endblock content %}

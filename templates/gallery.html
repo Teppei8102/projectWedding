@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <div class="h-100 pt-3">
+        <div id="gg-screen" hidden> </div>
+        <div class="gg-box">
+                {% for image in images %}
+                        <img src="{{image.image}}">
+                {% endfor %}
+        </div>
+        <script src="{% static 'js/grid-gallery.min.js' %}"></script>
+        </div>
+{% endblock content %}

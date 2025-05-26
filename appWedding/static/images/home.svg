@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.59 114.96">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #231815;
+      }
+
+      .cls-2 {
+        font-family: Meiryo, Meiryo;
+        font-size: 24px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="-7.51" y="18.21" width="55.13" height="3.68" rx="1.79" ry="1.79" transform="translate(48.41 20.05) rotate(135)"/>
+  <path class="cls-1" d="M38.3.34L6.65,31.99v34.59c0,3.06,2.48,5.53,5.53,5.53h15.92v-16.12c0-3.41,2.76-6.17,6.17-6.17h8.06c3.41,0,6.17,2.76,6.17,6.17v16.12h15.92c3.06,0,5.53-2.48,5.53-5.53V31.99L38.3.34Z"/>
+  <rect class="cls-1" x="28.97" y="18.21" width="55.13" height="3.68" rx="1.79" ry="1.79" transform="translate(82.34 74.21) rotate(-135)"/>
+  <text class="cls-2" transform="translate(2.3 104.4)"><tspan x="0" y="0">ホーム</tspan></text>
+</svg>
