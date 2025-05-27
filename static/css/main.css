@@ -197,7 +197,7 @@ nav, footer {
 
 .event-info-child {
     border-radius: 0 0 .5em .5em;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .event-info-child h1 {
